@@ -7,15 +7,15 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<meta name="description" content="Operations Research - Nonlinear Programmin - Monovariable - Computer Science - UNESP Bauru">
-    <meta name="author" content="Luís Puhl">
-    <link rel="icon" href="32pokeball.ico">
+	<meta name="author" content="Luís Puhl">
+	<link rel="icon" href="32pokeball.ico">
 
 	<title>Nonlinear Programming: Monovariable methods</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Bootstrap theme -->
-    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+	<!-- Bootstrap theme -->
+	<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 	<!-- main css file -->
 	<link href="css/index.css" rel="stylesheet" />
 
@@ -27,7 +27,11 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+	<!-- Main math.js lib -->
 	<script src="math.js" type="text/javascript"></script>
+	<!-- LaTeX converter to display formulae  -->
+	<!-- <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script> -->
+	<script src="latexit.js" type="text/javascript"></script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -70,6 +74,28 @@
 				</ul>
 		</div>
 	</div><!-- /.container -->
+
+	 <div class="col-sm-4">
+		<div class="list-group">
+			<a href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Linear Search **TODO**</h4>
+			 	<p class="list-group-item-text">
+			 		Given <span class="latex"><span lang="latex">f, [a, b]</span> and <span lang="latex">\delta</span></span><br/>
+			 		Start with <span lang="latex">x = a</span><br/>
+			 		Each step <span lang="latex">k</span> is given by <span lang="latex">x_{k} = x_{k-1} + \delta</span><br/>
+			 		Evaluate <span lang="latex">f(x)</span>, if it's value still decreasing, continue. If not, accept <span lang="latex">x</span><br/>
+			 	</p>
+			</a>
+			<a href="#" class="list-group-item">
+			 <h4 class="list-group-item-heading">List group item heading</h4>
+			 <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+			</a>
+			<a href="#" class="list-group-item">
+			 <h4 class="list-group-item-heading">List group item heading</h4>
+			 <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+			</a>
+		 </div>
+	</div><!-- /.col-sm-4 -->
 
 	<script type="text/javascript">
 	// use math.js
