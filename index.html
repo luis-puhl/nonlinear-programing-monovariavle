@@ -32,6 +32,7 @@
 	<!-- LaTeX converter to display formulae  -->
 	<!-- <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script> -->
 	<script src="latexit.js" type="text/javascript"></script>
+
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -61,41 +62,112 @@
 				This repo is part of Operations Research 2 class for Computer Science at UNESP Bauru.
 			</p>
 		</div>
-		<div>
-			<p class="lead">
-				<h2>Implemneted Methods</h2>
-				<br/>
-				<ul>
-					<li>Linear Search **TODO**</li>
-					<li>Dichotomic search **TODO**</li>
-					<li>Golden Section **TODO**</li>
-					<li>Fibonacci Search **TODO**</li>
-					<li>Bisection **TODO**</li>
-				</ul>
-		</div>
-	</div><!-- /.container -->
 
-	 <div class="col-sm-4">
+		<p class="lead"><h2>Implemneted Methods</h2></p>
+
 		<div class="list-group">
+
 			<a href="#" class="list-group-item">
 				<h4 class="list-group-item-heading">Linear Search **TODO**</h4>
-			 	<p class="list-group-item-text">
-			 		Given <span class="latex"><span lang="latex">f, [a, b]</span> and <span lang="latex">\delta</span></span><br/>
-			 		Start with <span lang="latex">x = a</span><br/>
-			 		Each step <span lang="latex">k</span> is given by <span lang="latex">x_{k} = x_{k-1} + \delta</span><br/>
-			 		Evaluate <span lang="latex">f(x)</span>, if it's value still decreasing, continue. If not, accept <span lang="latex">x</span><br/>
-			 	</p>
+				<p class="list-group-item-text">
+					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">\Delta</span> as step;<br/>
+					Start with <span lang="latex">x = a</span>;<br/>
+					Each step <span lang="latex">k</span> is given by <span lang="latex">x_{k} = x_{k-1} + \Delta</span>;<br/>
+					Evaluate <span lang="latex">f(x_{k})</span>, if it's value is decreasing, aka: <span lang="latex">f(x_{k}) &lt; f(x_{k-1})</span>, continue. If not, accept <span lang="latex">x</span> as optimum.<br/>
+					If desired, the result can be further refined repeting the procedure with <span lang="latex">\frac{\Delta}{10}</span> as step.
+				</p>
 			</a>
+
 			<a href="#" class="list-group-item">
-			 <h4 class="list-group-item-heading">List group item heading</h4>
-			 <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+				<h4 class="list-group-item-heading">Dichotomic search **TODO**</h4>
+				<p class="list-group-item-text">
+					Given <span lang="latex">f, [a, b]</span>, <span lang="latex">\epsilon</span> as evaluation range and <span lang="latex">l</span> as maximum error;<br/>
+					Until <span lang="latex">b - a &lt; l</span> do the following:
+					<ul>
+						<li>Evaluate <span lang="latex">x = \frac{b + a}{2}</span><br/></li>
+						<li>Evaluate <span lang="latex">X = f(x - \epsilon)</span> and <span lang="latex">Y = f(x + \epsilon)</span></li>
+						<li>If <span lang="latex">X &gt; Y</span> make <span lang="latex">a = x - \epsilon</span> otherwise, make <span lang="latex">b = x + \epsilon</span></li>
+					</ul>
+					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
+				</p>
 			</a>
+
 			<a href="#" class="list-group-item">
-			 <h4 class="list-group-item-heading">List group item heading</h4>
-			 <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+				<h4 class="list-group-item-heading">Golden Section **TODO**</h4>
+				<p class="list-group-item-text">
+					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
+					Also using the constants <span lang="latex">\alpha = \frac{\sqrt{5} - 1}{2}</span> and <span lang="latex">\beta = 1 - \alpha</span><br/>
+					Until <span lang="latex">b - a &lt; l</span> do the following:
+					<ul>
+						<li>Evaluate <span lang="latex">\mu = a + \beta * (b - a)</span> and <span lang="latex">\lambda = a + \alpha * (b - a)</span></li>
+						<li>Evaluate <span lang="latex">f(\mu) &gt; f(\lambda)</span>, if true 
+							<ul>
+								<li>make <span lang="latex">a = \mu</span></li>
+								<li>make <span lang="latex">\mu = \lambda</span> and save the next evaluatin of <span lang="latex">f(\mu)</span> doing <span lang="latex">f_{k}(\mu) = f_{k-1}(\lambda)</span></li>
+							</ul>
+							Otherwise
+							<ul>
+								<li>make <span lang="latex">b = \lambda</span></li>
+								<li>make <span lang="latex">\lambda = \mu</span> and save the next evaluatin of <span lang="latex">f(\lambda)</span> doing <span lang="latex">f_{k}(\lambda) = f_{k-1}(\mu)</span></li>
+							</ul>
+					</ul>
+					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
+				</p>
 			</a>
-		 </div>
-	</div><!-- /.col-sm-4 -->
+
+			<a href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Fibonacci Search **TODO**</h4>
+				<p class="list-group-item-text">
+					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
+					Also using fibonacci sequence <span lang="latex">F</span>;<br/>
+					Until <span lang="latex">b - a &lt; l</span> do the following:
+					<ul>
+						<li>Evaluate <span lang="latex">\alpha = \frac{ F _{n-k-2} }{ F _{n-k} }</span> and <span lang="latex">\beta = \frac{ F _{n-k-1} }{ F _{n-k} }</span></li>
+						<li>Evaluate <span lang="latex">\mu = a + \beta * (b - a)</span> and <span lang="latex">\lambda = a + \alpha * (b - a)</span></li>
+						<li>Evaluate <span lang="latex">f(\mu) &gt; f(\lambda)</span>, if true 
+							<ul>
+								<li>make <span lang="latex">a = \mu</span></li>
+								<li>make <span lang="latex">\mu = \lambda</span> and save the next evaluatin of <span lang="latex">f(\mu)</span> doing <span lang="latex">f_{k}(\mu) = f_{k-1}(\lambda)</span></li>
+							</ul>
+							Otherwise
+							<ul>
+								<li>make <span lang="latex">b = \lambda</span></li>
+								<li>make <span lang="latex">\lambda = \mu</span> and save the next evaluatin of <span lang="latex">f(\lambda)</span> doing <span lang="latex">f_{k}(\lambda) = f_{k-1}(\mu)</span></li>
+							</ul>
+					</ul>
+					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
+				</p>
+			</a>
+
+			<a href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Bisection **TODO**</h4>
+				<p class="list-group-item-text">
+					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
+					Also assuming <span lang="latex">f'(x)  \exists  \forall  x  \in [a..b]</span>;<br/>
+					<br>
+					Until <span lang="latex">b - a &lt; l</span> do the following:
+					<ul>
+						<li>Evaluate <span lang="latex">\alpha = \frac{ F _{n-k-2} }{ F _{n-k} }</span> and <span lang="latex">\beta = \frac{ F _{n-k-1} }{ F _{n-k} }</span></li>
+						<li>Evaluate <span lang="latex">\mu = a + \beta * (b - a)</span> and <span lang="latex">\lambda = a + \alpha * (b - a)</span></li>
+						<li>Evaluate <span lang="latex">f(\mu) &gt; f(\lambda)</span>, if true 
+							<ul>
+								<li>make <span lang="latex">a = \mu</span></li>
+								<li>make <span lang="latex">\mu = \lambda</span> and save the next evaluatin of <span lang="latex">f(\mu)</span> doing <span lang="latex">f_{k}(\mu) = f_{k-1}(\lambda)</span></li>
+							</ul>
+							Otherwise
+							<ul>
+								<li>make <span lang="latex">b = \lambda</span></li>
+								<li>make <span lang="latex">\lambda = \mu</span> and save the next evaluatin of <span lang="latex">f(\lambda)</span> doing <span lang="latex">f_{k}(\lambda) = f_{k-1}(\mu)</span></li>
+							</ul>
+					</ul>
+					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
+				</p>
+			</a>
+
+			<li>Newton **TODO**</li>
+
+		</div><!-- / .list-group -->
+	</div><!-- / .container -->
 
 	<script type="text/javascript">
 	// use math.js
