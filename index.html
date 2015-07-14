@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,119 +56,279 @@
 	</nav>
 
 	<div class="container">
-		<div class="starter-template">
+		<div class="headline">
 			<h1>Nonlinear Programming: Monovariable methods</h1>
 			<p class="lead">
 				This repo is part of Operations Research 2 class for Computer Science at UNESP Bauru.
 			</p>
 		</div>
+	</div>
 
-		<p class="lead"><h2>Implemneted Methods</h2></p>
+	<div class="container-fluid">
 
-		<div class="list-group">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Implemneted Methods</h2>
 
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Linear Search **TODO**</h4>
-				<p class="list-group-item-text">
-					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">\Delta</span> as step;<br/>
-					Start with <span lang="latex">x = a</span>;<br/>
-					Each step <span lang="latex">k</span> is given by <span lang="latex">x_{k} = x_{k-1} + \Delta</span>;<br/>
-					Evaluate <span lang="latex">f(x_{k})</span>, if it's value is decreasing, aka: <span lang="latex">f(x_{k}) &lt; f(x_{k-1})</span>, continue. If not, accept <span lang="latex">x</span> as optimum.<br/>
-					If desired, the result can be further refined repeting the procedure with <span lang="latex">\frac{\Delta}{10}</span> as step.
-				</p>
-			</a>
+				<!-- Linear -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12 col-lg-5">
+								<a class="panel-title">Linear Search **TODO**</a>
+							</div>
+							<div class="col-md-12 col-lg-7">
+								<div class="btn-group" role="group">
+									<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#linearColapse" aria-expanded="false" aria-controls="linearColapse">
+										Show explanation
+									</button>
+									<button class="btn btn-primary" type="button">
+										Use this method
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body collapse" id="linearColapse">
+						<p>
+							Given <span lang="latex">f, [a, b]</span> and <span lang="latex">\Delta</span> as step;<br/>
+							Start with <span lang="latex">x = a</span>;<br/>
+							Each step <span lang="latex">k</span> is given by <span lang="latex">x_{k} = x_{k-1} + \Delta</span>;<br/>
+							Evaluate <span lang="latex">f(x_{k})</span>, if it's value is decreasing, aka: <span lang="latex">f(x_{k}) &lt; f(x_{k-1})</span>, continue. If not, accept <span lang="latex">x</span> as optimum.<br/>
+							If desired, the result can be further refined repeting the procedure with <span lang="latex">\frac{\Delta}{10}</span> as step.
+						</p>
+					</div>
+				</div>
 
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Dichotomic search **TODO**</h4>
-				<p class="list-group-item-text">
-					Given <span lang="latex">f, [a, b]</span>, <span lang="latex">\epsilon</span> as evaluation range and <span lang="latex">l</span> as maximum error;<br/>
-					Until <span lang="latex">b - a &lt; l</span> do the following:
-					<ul>
-						<li>Evaluate <span lang="latex">x = \frac{b + a}{2}</span><br/></li>
-						<li>Evaluate <span lang="latex">X = f(x - \epsilon)</span> and <span lang="latex">Y = f(x + \epsilon)</span></li>
-						<li>If <span lang="latex">X &gt; Y</span> make <span lang="latex">a = x - \epsilon</span> otherwise, make <span lang="latex">b = x + \epsilon</span></li>
-					</ul>
-					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
-				</p>
-			</a>
-
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Golden Section **TODO**</h4>
-				<p class="list-group-item-text">
-					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
-					Also using the constants <span lang="latex">\alpha = \frac{\sqrt{5} - 1}{2}</span> and <span lang="latex">\beta = 1 - \alpha</span><br/>
-					Until <span lang="latex">b - a &lt; l</span> do the following:
-					<ul>
-						<li>Evaluate <span lang="latex">\mu = a + \beta * (b - a)</span> and <span lang="latex">\lambda = a + \alpha * (b - a)</span></li>
-						<li>Evaluate <span lang="latex">f(\mu) &gt; f(\lambda)</span>, if true 
+				<!-- Dichotomic -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12 col-lg-5">
+								<a class="panel-title">Dichotomic Search **TODO**</a>
+							</div>
+							<div class="col-md-12 col-lg-7">
+								<div class="btn-group" role="group">
+									<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#dichotomicCollapse" aria-expanded="false" aria-controls="dichotomicCollapse">
+										Show explanation
+									</button>
+									<button class="btn btn-primary" type="button">
+										Use this method
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body collapse" id="dichotomicCollapse">
+						<p>
+							Given <span lang="latex">f, [a, b]</span>, <span lang="latex">\epsilon</span> as evaluation range and <span lang="latex">l</span> as maximum error;<br/>
+							Until <span lang="latex">b - a &lt; l</span> do the following:
 							<ul>
-								<li>make <span lang="latex">a = \mu</span></li>
-								<li>make <span lang="latex">\mu = \lambda</span> and save the next evaluatin of <span lang="latex">f(\mu)</span> doing <span lang="latex">f_{k}(\mu) = f_{k-1}(\lambda)</span></li>
+								<li>Evaluate <span lang="latex">x = \frac{b + a}{2}</span><br/></li>
+								<li>Evaluate <span lang="latex">X = f(x - \epsilon)</span> and <span lang="latex">Y = f(x + \epsilon)</span></li>
+								<li>If <span lang="latex">X &gt; Y</span> make <span lang="latex">a = x - \epsilon</span> otherwise, make <span lang="latex">b = x + \epsilon</span></li>
 							</ul>
-							Otherwise
-							<ul>
-								<li>make <span lang="latex">b = \lambda</span></li>
-								<li>make <span lang="latex">\lambda = \mu</span> and save the next evaluatin of <span lang="latex">f(\lambda)</span> doing <span lang="latex">f_{k}(\lambda) = f_{k-1}(\mu)</span></li>
-							</ul>
-					</ul>
-					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
-				</p>
-			</a>
+							When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
+						</p>
+					</div>
+				</div>
 
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Fibonacci Search **TODO**</h4>
-				<p class="list-group-item-text">
-					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
-					Also using fibonacci sequence <span lang="latex">F</span>;<br/>
-					Until <span lang="latex">b - a &lt; l</span> do the following:
-					<ul>
-						<li>Evaluate <span lang="latex">\alpha = \frac{ F _{n-k-2} }{ F _{n-k} }</span> and <span lang="latex">\beta = \frac{ F _{n-k-1} }{ F _{n-k} }</span></li>
-						<li>Evaluate <span lang="latex">\mu = a + \beta * (b - a)</span> and <span lang="latex">\lambda = a + \alpha * (b - a)</span></li>
-						<li>Evaluate <span lang="latex">f(\mu) &gt; f(\lambda)</span>, if true 
+				<!-- Golden Section -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12 col-lg-5">
+								<a class="panel-title">Golden Section **TODO**</a>
+							</div>
+							<div class="col-md-12 col-lg-7">
+								<div class="btn-group" role="group">
+									<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#goldenCollapse" aria-expanded="false" aria-controls="goldenCollapse">
+										Show explanation
+									</button>
+									<button class="btn btn-primary" type="button">
+										Use this method
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body collapse" id="goldenCollapse">
+						<p>
+							Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
+							Also using the constants <span lang="latex">\alpha = \frac{\sqrt{5} - 1}{2}</span> and <span lang="latex">\beta = 1 - \alpha</span><br/>
+							Until <span lang="latex">b - a &lt; l</span> do the following:
 							<ul>
-								<li>make <span lang="latex">a = \mu</span></li>
-								<li>make <span lang="latex">\mu = \lambda</span> and save the next evaluatin of <span lang="latex">f(\mu)</span> doing <span lang="latex">f_{k}(\mu) = f_{k-1}(\lambda)</span></li>
+								<li>Evaluate <span lang="latex">\mu = a + \beta * (b - a)</span> and <span lang="latex">\lambda = a + \alpha * (b - a)</span></li>
+								<li>Evaluate <span lang="latex">f(\mu) &gt; f(\lambda)</span>, if true 
+									<ul>
+										<li>make <span lang="latex">a = \mu</span></li>
+										<li>make <span lang="latex">\mu = \lambda</span> and save the next evaluatin of <span lang="latex">f(\mu)</span> doing <span lang="latex">f_{k}(\mu) = f_{k-1}(\lambda)</span></li>
+									</ul>
+									Otherwise
+									<ul>
+										<li>make <span lang="latex">b = \lambda</span></li>
+										<li>make <span lang="latex">\lambda = \mu</span> and save the next evaluatin of <span lang="latex">f(\lambda)</span> doing <span lang="latex">f_{k}(\lambda) = f_{k-1}(\mu)</span></li>
+									</ul>
 							</ul>
-							Otherwise
-							<ul>
-								<li>make <span lang="latex">b = \lambda</span></li>
-								<li>make <span lang="latex">\lambda = \mu</span> and save the next evaluatin of <span lang="latex">f(\lambda)</span> doing <span lang="latex">f_{k}(\lambda) = f_{k-1}(\mu)</span></li>
-							</ul>
-					</ul>
-					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
-				</p>
-			</a>
+							When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
+						</p>
+					</div>
+				</div>
 
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Bisection **TODO**</h4>
-				<p class="list-group-item-text">
-					Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
-					Also assuming <span lang="latex">f'(x)  \exists  \forall  x  \in [a..b]</span>;<br/>
-					Evaluate <span lang="latex">n</span> by solving <span lang="latex">\frac{1}{2} ^{n} &lte; \frac{ l }{ b_{1} - a_{1} }</span>;<br/>
-					Starting with <span lang="latex">k = 1</span> repeat the following until <span lang="latex">k = n</span>:
-					<ul>
-						<li>Evaluate <span lang="latex">x_{k} = \frac{a + b}{2}</span></li>
-						<li>Evaluate <span lang="latex">f'(x_{k})</span> and check the following
+				<!-- Fibonacci -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12 col-lg-5">
+								<a class="panel-title">Fibonacci Search **TODO**</a>
+							</div>
+							<div class="col-md-12 col-lg-7">
+								<div class="btn-group" role="group">
+									<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#fibonacciCollapse" aria-expanded="false" aria-controls="fibonacciCollapse">
+										Show explanation
+									</button>
+									<button class="btn btn-primary" type="button">
+										Use this method
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body collapse" id="fibonacciCollapse">
+						<p>
+							Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
+							Also using fibonacci sequence <span lang="latex">F</span>;<br/>
+							Until <span lang="latex">b - a &lt; l</span> do the following:
 							<ul>
-								<li>
-									case <span lang="latex">f'(x_{k}) &lt; 0</span> make <span lang="latex">a_{k+1} = x_{k}</span> and <span lang="latex">b_{k+1} = b_{k}</span>;
+								<li>Evaluate <span lang="latex">\alpha = \frac{ F _{n-k-2} }{ F _{n-k} }</span> and <span lang="latex">\beta = \frac{ F _{n-k-1} }{ F _{n-k} }</span></li>
+								<li>Evaluate <span lang="latex">\mu = a + \beta * (b - a)</span> and <span lang="latex">\lambda = a + \alpha * (b - a)</span></li>
+								<li>Evaluate <span lang="latex">f(\mu) &gt; f(\lambda)</span>, if true 
+									<ul>
+										<li>make <span lang="latex">a = \mu</span></li>
+										<li>make <span lang="latex">\mu = \lambda</span> and save the next evaluatin of <span lang="latex">f(\mu)</span> doing <span lang="latex">f_{k}(\mu) = f_{k-1}(\lambda)</span></li>
+									</ul>
+									Otherwise
+									<ul>
+										<li>make <span lang="latex">b = \lambda</span></li>
+										<li>make <span lang="latex">\lambda = \mu</span> and save the next evaluatin of <span lang="latex">f(\lambda)</span> doing <span lang="latex">f_{k}(\lambda) = f_{k-1}(\mu)</span></li>
+									</ul>
+							</ul>
+							When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = \frac{b + a}{2}</span>
+						</p>
+					</div>
+				</div>
+
+				<!-- Bisection -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12 col-lg-5">
+								<a class="panel-title">Bisection **TODO**</a>
+							</div>
+							<div class="col-md-12 col-lg-7">
+								<div class="btn-group" role="group">
+									<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#bissectionCollapse" aria-expanded="false" aria-controls="bissectionCollapse">
+										Show explanation
+									</button>
+									<button class="btn btn-primary" type="button">
+										Use this method
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body collapse" id="bissectionCollapse">
+						<p>
+							Given <span lang="latex">f, [a, b]</span> and <span lang="latex">l</span> as maximum error;<br/>
+							Also assuming <span lang="latex">f'(x) \exists \; \forall x \; \in [a..b]</span>;<br/>
+							Evaluate <span lang="latex">n</span> by solving <span lang="latex">\frac{1}{2} ^{n} &lte; \frac{ l }{ b_{1} - a_{1} }</span>;<br/>
+							Starting with <span lang="latex">k = 1</span> repeat the following until <span lang="latex">k = n</span>:
+							<ul>
+								<li>Evaluate <span lang="latex">x_{k} = \frac{a + b}{2}</span></li>
+								<li>Evaluate <span lang="latex">f'(x_{k})</span> and check the following
+									<ul>
+										<li>
+											case <span lang="latex">f'(x_{k}) &lt; 0</span> make <span lang="latex">a_{k+1} = x_{k}</span> and <span lang="latex">b_{k+1} = b_{k}</span>;
+										</li>
+										<li>
+											case <span lang="latex">f'(x_{k}) &gt; 0</span> make <span lang="latex">a_{k+1} = a_{k}</span> and <span lang="latex">b_{k+1} = x_{k}</span>;
+										</li>
+										<li>
+											case <span lang="latex">f'(x_{k}) = 0</span> stop the process because <span lang="latex">x^{*} = x_{k}</span>.
+										</li>
+									</ul>
 								</li>
-								<li>
-									case <span lang="latex">f'(x_{k}) &gt; 0</span> make <span lang="latex">a_{k+1} = a_{k}</span> and <span lang="latex">b_{k+1} = x_{k}</span>;
-								</li>
-								<li>
-									case <span lang="latex">f'(x_{k}) = 0</span> stop the process becouse <span lang="latex">x^{*} = x_{k}</span>.
-								</li>
 							</ul>
-						</li>
-					</ul>
-					When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = x_{k}</span>
-				</p>
-			</a>
+							When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = x_{k}</span>
+						</p>
+					</div>
+				</div>
 
-			<li>Newton **TODO**</li>
+				<!-- Newton -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12 col-lg-5">
+								<a class="panel-title">Newton **TODO**</a>
+							</div>
+							<div class="col-md-12 col-lg-7">
+								<div class="btn-group" role="group">
+									<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#bissectionCollapse" aria-expanded="false" aria-controls="bissectionCollapse">
+										Show explanation
+									</button>
+									<button class="btn btn-primary" type="button">
+										Use this method
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body collapse" id="newtonCollapse">
+						<p>
+							Given <span lang="latex">f, [a, b]</span> and <span lang="latex">\epsilon</span> as maximum error;<br/>
+							Also assuming <span lang="latex">f'(x) \; and \; f''(x)  \exists \; \forall  x \; \in [a..b]</span>;<br/>
+							Until <span lang="latex">\lVert f'(x_{k+1})\rVert &lt; \epsilon</span> or <span lang="latex"></span> do:<br/>
+							<ul>
+								<li>Evaluate the next nearest minimum point <span lang="latex">x_{k+1} = x_{k} - \frac{ f'(x_{k}) }{ f''(x_{k}) }</span></li>
+							</ul>
+							When the stoping condition has been reach, the optimum will be <span lang="latex">x^{*} = x_{k}</span><br/>
+							Notes:
+							<ol>
+								<li>If the function is quadratic there is only one iteration;</li>
+								<li>This procedure is valid only if <span lang="latex">f(x) \x^{*} = x_{k}</span></li>
+							</ol>
+						</p>
+					</div>
+				</div>
 
-		</div><!-- / .list-group -->
+			</div><!-- / methods -->
+
+			<div class="col-md-6">
+				<form>
+						  <div class="form-group">
+					    <label for="exampleInputEmail1">Email address</label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Password</label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputFile">File input</label>
+					    <input type="file" id="exampleInputFile">
+					    <p class="help-block">Example block-level help text here.</p>
+					  </div>
+					  <div class="checkbox">
+					    <label>
+					      <input type="checkbox"> Check me out
+					    </label>
+					  </div>
+					  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div> <!-- / form -->
+
+		</div><!-- / .row -->
+
 	</div><!-- / .container -->
 
 	<script type="text/javascript">
